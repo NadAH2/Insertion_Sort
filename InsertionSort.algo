@@ -4,12 +4,12 @@ VAR
 BEGIN
     FOR i FROM 1 TO m-1 STEP 1  DO
         key:=A[i];
-        j:=i;
-        WHILE (j>0 AND Tab[j-1]>key) DO
-            Tab[j]:=Tab[j-1];
+        j:=i-1;
+        WHILE (j>0 AND Tab[j]>key) DO
+            Tab[j+1]:=Tab[j];
             j:=j-1;
         END_WHILE
-        Tab[j]:=key;
+        Tab[j+1]:=key;
     END_FOR
 END             
 
