@@ -1,0 +1,29 @@
+PROCEDURE InsertionSort(VAR Tab : ARRAY_OF INTEGER[], m:INTEGER)
+VAR
+    i,j,key:INTEGER;
+BEGIN
+    FOR i FROM 1 TO m-1 STEP 1  DO
+        key:=A[i];
+        j:=i;
+        WHILE (j>0 AND Tab[j-1]>key) DO
+            Tab[j]:=Tab[j-1];
+            j:=j-1;
+        END_WHILE
+        Tab[j]:=key;
+    END_FOR
+END             
+
+ALGORITHM InsertionAlgo
+VAR
+    arr : ARRAY_OF INTEGER[];
+    i,j,n:INTEGER;
+BEGIN
+    WHILE (n>0) DO
+        Read(n);
+    END_WHILE
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        READ(arr[i]);
+        InsertionSort(arr[i],n);
+        Write("after sorting:" arr[i]);
+    END_FOR
+END
