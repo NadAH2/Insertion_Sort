@@ -3,7 +3,7 @@ VAR
     i,j,key:INTEGER;
 BEGIN
     FOR i FROM 1 TO m-1 STEP 1  DO
-        key:=A[i];
+        key:=Tab[i];
         j:=i-1;
         WHILE (j>0 AND Tab[j]>key) DO
             Tab[j+1]:=Tab[j];
@@ -11,7 +11,8 @@ BEGIN
         END_WHILE
         Tab[j+1]:=key;
     END_FOR
-END             
+END        
+j
 
 ALGORITHM InsertionAlgo
 VAR
