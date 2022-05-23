@@ -1,11 +1,11 @@
-PROCEDURE InsertionSort(VAR Tab : ARRAY_OF INTEGER[], m:INTEGER)
+PROCEDURE InsertionSort(VAR Tab : ARRAY_OF INTEGER[])
 VAR
     i,j,key:INTEGER;
 BEGIN
-    FOR i FROM 1 TO m-1 STEP 1  DO
+    FOR i FROM 1 TO Tab.length-1 STEP 1  DO
         key:=Tab[i];
         j:=i-1;
-        WHILE (j>0 AND Tab[j]>key) DO
+        WHILE (j>=0 AND Tab[j]>key) DO
             Tab[j+1]:=Tab[j];
             j:=j-1;
         END_WHILE
@@ -24,7 +24,7 @@ BEGIN
     END_WHILE
     FOR i FROM 0 TO n-1 STEP 1  DO
         READ(arr[i]);
-        InsertionSort(arr[i],n);
+        InsertionSort(arr[i]);
         Write("after sorting:" arr[i]);
     END_FOR
 END
